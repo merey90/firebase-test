@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/remote-config';
 import 'firebase/analytics';
+import 'firebase/performance';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCmErbWqb9dfMOrrYPUGa8Du4D1Rg3ws1M',
@@ -23,6 +24,7 @@ class Firebase {
     };
 
     this.analytics = app.analytics();
+    this.performance = app.performance();
   }
 }
 

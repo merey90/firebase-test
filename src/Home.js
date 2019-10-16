@@ -8,6 +8,12 @@ const Home = () => (
         firebase.analytics.logEvent('exercise_completion', {
           name: 'memobox',
         });
+        const trace = firebase.performance.trace('CustomDelayedTrace');
+        trace.putAttribute("experiment", "Yolooo!");
+        trace.start();
+        setTimeout(() => {
+          trace.stop();
+        }, 1000);
       };
       firebase.analytics.logEvent('Home_page_opened', {
         page: 'Home',
